@@ -41,4 +41,4 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-nmap _$ :call StripTrailingWhitespaces<CR>
+nmap _$ :call <SID>StripTrailingWhitespaces()<CR>
