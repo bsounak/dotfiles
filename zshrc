@@ -7,8 +7,8 @@ export LC_ALL=en_US.UTF-8
 alias ..="cd .."
 alias vi="nvim"
 alias vim="nvim"
-alias vimrc="nvim ~/.config/nvim/init.vim"  
+alias vimrc="nvim ~/.config/nvim/init.vim"
+alias ctags="`brew --prefix`/bin/ctags"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
