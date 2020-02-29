@@ -63,19 +63,11 @@ function StripTrailingWhitespaces()
 endfunction
 
 nmap _$ :call StripTrailingWhitespaces()<CR>
-
-function ShowFiles()
-  call fzf#vim#files('', fzf#vim#with_preview('right'))
-endfunction
-
-function ShowGitFiles()
-  call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))
-endfunction
+nmap _f :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+nmap _g :call fzf#vim#gitfiles('', fzf#vim#with_preview('right'))<CR>
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
-nmap _f :call ShowFiles()<CR>
-nmap _g :call ShowGitFiles()<CR>
