@@ -20,6 +20,7 @@ nnoremap <leader>d :Gdiff<CR>
 nnoremap <leader>s :Gstatus<CR>
 
 Plug 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
 Plug 'morhetz/gruvbox'
 call plug#end()
 
