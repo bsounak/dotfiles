@@ -11,9 +11,9 @@ command! -bang -nargs=? -complete=dir GFiles
     \ call fzf#vim#gitfiles(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
-map gs :GFiles!<CR>
-map ls :Files!<CR>
-map rg :Rg!<CR>
+nmap _l :GFiles!<CR>
+nmap _g :Files!<CR>
+nmap _r :Rg!<CR>
 
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>d :Gdiff<CR>
