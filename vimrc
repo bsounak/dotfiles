@@ -5,9 +5,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-nmap <space>l :Files!<CR>
-nmap <space>g :GFiles!<CR>
-nmap <space>r :Rg!<CR>
+map <space>l :Files!<CR>
+map <space>g :GFiles!<CR>
+map <space>r :Rg!<CR>
+map <space>s :GFiles?<CR>
 
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>d :Gdiff<CR>
@@ -15,9 +16,13 @@ nnoremap <leader>s :Gstatus<CR>
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
-Plug 'morhetz/gruvbox'
 Plug 'tell-k/vim-autopep8'
 let g:autopep8_disable_show_diff=1
+" Colorschemes
+Plug 'morhetz/gruvbox'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
 call plug#end()
 
 syntax on
@@ -38,6 +43,7 @@ set tags=tags
 
 set background=dark
 colorscheme gruvbox
+"colorscheme afterglow
 set colorcolumn=79
 
 " Changing focus between windows
@@ -46,7 +52,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Jump to function defintion: ctags
-map <space>d <C-]>
+map <space>d <C-]>zz
 " Buffers
 map <space>n :bn<CR>
 
@@ -77,3 +83,6 @@ function StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 nmap _$ :call StripTrailingWhitespaces()<CR>
+
+noremap Pl :!python -m pylint %<CR>
+noremap <space>p :!python %<CR>
