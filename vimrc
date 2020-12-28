@@ -16,13 +16,12 @@ nnoremap <leader>s :Gstatus<CR>
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
+Plug 'morhetz/gruvbox'
 Plug 'tell-k/vim-autopep8'
 let g:autopep8_disable_show_diff=1
-" Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'danilo-augusto/vim-afterglow'
+
 Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
+let g:tex_flavor = 'latex'
 call plug#end()
 
 syntax on
@@ -43,7 +42,6 @@ set tags=tags
 
 set background=dark
 colorscheme gruvbox
-"colorscheme afterglow
 set colorcolumn=79
 
 " Changing focus between windows
@@ -84,5 +82,5 @@ function StripTrailingWhitespaces()
 endfunction
 nmap _$ :call StripTrailingWhitespaces()<CR>
 
-noremap Pl :!python -m pylint %<CR>
-noremap <space>p :!python %<CR>
+" python shortcuts
+map <space>p :!python %<CR>
